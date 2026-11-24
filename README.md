@@ -14,6 +14,10 @@
 > channels. Put authentication in an authorizer, throttling in the stage,
 > and observability everywhere.
 
+## 🌍 In plain words — what is this, really?
+
+Think of a busy restaurant with one front door, a host at the entrance, and a kitchen behind it that should never deal directly with the crowd outside. The host checks reservations, turns away people who should not come in, limits how many guests enter at once, and sends each party to the right table. API Gateway is that host for your software: every request from an app or website arrives at this one front door before it reaches your backend. It checks who the caller is, stops abusive traffic, makes sure the request is well-formed, and then routes it to the right service, such as a Lambda function. That is why the technical pieces in this guide — authorizers, throttling, validation, and stages — all live at the door, not in the kitchen.
+
 ## Why a managed gateway at all?
 
 You *could* expose a Lambda Function URL or an ALB directly. You lose:
@@ -152,8 +156,3 @@ work.
 5. **Deploying from the console.** Console edits to a stage bypass your
    IaC and drift silently. Change the Terraform, run the pipeline.
 
-## Quiz teaser
-
-Think you got it? Five questions in [`quiz.md`](quiz.md) — HTTP vs REST
-vs WebSocket, authorizer caching, throttling vs quotas, canary deploys,
-and the 29-second trap. Answers hidden, no peeking. 👀
